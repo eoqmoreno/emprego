@@ -1,0 +1,82 @@
+:root{
+--azulClaro: #2793FF;
+--azulEscuro: #111E6C;
+--roxo: #A10091;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--azulClaro);
+    opacity: 1; /* Firefox */
+}
+.navbar > div{
+    height: 100px;
+}
+
+/*Fonts*/
+@font-face {
+    font-family: title;
+    src: url("../fonts/title.ttf");
+}
+
+/* Background */
+.bg-azulClaro{
+    background-color: var(--azulClaro);
+}
+.bg-azulEscuro{
+    background-color: var(--azulEscuro);
+}
+.bg-roxo{
+    background-color: var(--roxo);
+}
+
+/*Border*/
+.b-azulClaro{
+    border: 3px solid var(--azulClaro);
+}
+.b-azulEscuro{
+    border-color: var(--azulEscuro);
+}
+.b-roxo{
+    border-color: var(--roxo);
+}
+
+/*font-color*/
+.azulClaro{
+    color: var(--azulClaro);
+}
+.azulEscuro{
+    color: var(--azulEscuro);
+}
+.roxo{
+    color: var(--roxo);
+}
+.branco{
+    color: white;
+}
+
+/*fonts*/
+.f-title-150{
+    font-family: title;
+    font-size: 150%;
+}
+.f-title{
+    font-family: title;
+}
+
+/*Carousel*/
+.carousel-item{
+    max-height: 400px;
+    overflow: hidden;
+}
+.carousel-item img{
+    margin-top: -20%;
+}
+
+/*Rounded*/
+.rounded-left{
+    border-top-left-radius: 2rem!important;
+    border-bottom-left-radius: 2rem!important;
+}
+.rounded-right{
+    border-top-right-radius: 2rem!important;
+    border-bottom-right-radius: 2rem!important;
+}
