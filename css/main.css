@@ -16,6 +16,18 @@
     font-family: title;
     src: url("../fonts/title.ttf");
 }
+@font-face {
+    font-family: text-bold;
+    src: url("../fonts/text-bold.ttf");
+}
+@font-face {
+    font-family: text-regular;
+    src: url("../fonts/text-regular.ttf");
+}
+@font-face {
+    font-family: text-thin;
+    src: url("../fonts/text-thin.ttf");
+}
 
 /* Background */
 .bg-azulClaro{
@@ -61,15 +73,24 @@
 .f-title{
     font-family: title;
 }
-
+.f-text{
+    font-family: text-regular;
+}
+.f-text-bold{
+    font-family: text-bold;
+}
+.f-text-thin{
+    font-family: text-thin;
+}
 /*Carousel*/
-.carousel-item{
+.img-carousel{
     max-height: 400px;
     overflow: hidden;
 }
-.carousel-item img{
+.img-carousel img{
     margin-top: -20%;
 }
+
 
 /*Rounded*/
 .rounded-left{
