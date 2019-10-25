@@ -1,7 +1,7 @@
 :root{
---azulClaro: #003c96;
---azulEscuro: #000054;
---roxo: #f87000;
+--azulClaro: #2793FF;
+--azulEscuro: #111E6C;
+--roxo: #A10091;
 }
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: var(--roxo);
@@ -76,8 +76,13 @@
 .f-text{
     font-family: text-regular;
 }
+.f-text-80{
+    font-family: text-regular;
+    font-size: 85%;
+}
 .f-text-bold{
     font-family: text-bold;
+    padding-bottom: 0;
 }
 .f-text-thin{
     font-family: text-thin;
@@ -118,9 +123,8 @@
 }
 
 /*rounded-circle*/
-.circle{
-    width: 100px;
-    height: 100px;
+.height75{
+    height: 75px;
 }
 
 /*card*/
@@ -149,4 +153,14 @@
 }
 .modal-header .close{
     padding: 1.5rem 1.5rem;
+}
+
+/* Lista */
+ul{
+    list-style: none;
+}
+
+/* Grafismos */
+.grafismo{
+    background-image: url('../img/grafismo.png');
 }
