@@ -42,7 +42,7 @@
 
 /*Border*/
 .b-azulClaro{
-    border: 3px solid var(--azulClaro);
+    border: 1px solid var(--azulClaro);
 }
 .b-azulEscuro{
     border-color: var(--azulEscuro);
@@ -50,7 +50,9 @@
 .b-roxo{
     border-color: var(--roxo);
 }
-
+.b-branco{
+    border: 1px solid white;
+}
 /*font-color*/
 .azulClaro{
     color: var(--azulClaro);
@@ -93,7 +95,11 @@
     overflow: hidden;
 }
 .img-carousel img{
-    margin-top: -20%;
+}
+
+.img-perfil{
+    width: 200px;
+    height: 200px;
 }
 
 /*Cadastrado home*/

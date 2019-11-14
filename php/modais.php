@@ -10,27 +10,21 @@
                 <div class="modal-body text-center">
                     <h5 class="modal-title roxo f-title-150" id="exampleModalLabel">Vamos começar o cadastro?</h5>
                     <br>
-                    <form action="cad.php" method="post">
+                    <form action="./php/cadCurriculo.php" method="post">
                         <div class="form-group">
-                            <input type="text" name="nome" class="form-control" placeholder="Nome completo*" required>
+                            <input type="text" name="nome" class="form-control" placeholder="Nome completo*">
                         </div>
 
                         <div class="form-group">
-                            <input type="email" name="email" class="form-control" placeholder="E-mail*" required>
+                            <input type="email" name="email" class="form-control" placeholder="E-mail*">
                         </div>
                         
                         <div class="form-group">
-                            <select name="profissao" class="form-control" required>
-                                <option value="nan">Profissão</option>
-                            </select>
+                            <input type="tel" name="telefone" class="form-control tell" placeholder="Telefone*">
                         </div>
                         
                         <div class="form-group">
-                            <input type="tel" name="tell" class="form-control tell" placeholder="Telefone*" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <input type="password" name="senha" class="form-control" placeholder="Senha*" required>
+                            <input type="password" name="senha" class="form-control" placeholder="Senha*">
                         </div>
                         
                         <div class="text-right">
@@ -100,9 +94,9 @@
                 <div class="modal-body text-center">
                     <h5 class="modal-title roxo f-title-150" id="exampleModalLabel">Vamos entrar!</h5>
                     <br>
-                    <form action="cad.php" method="post">
+                    <form action="./php/login.php" method="post">
                         <div class="form-group">
-                            <input type="email" name="email" class="form-control" placeholder="E-mail*" required>
+                            <input type="text" name="email" class="form-control" placeholder="E-mail*" required>
                         </div>
                         
                         <div class="form-group">
@@ -112,6 +106,7 @@
                         <div class="text-right">
                             <input type="submit" class="btn bg-roxo branco f-text-bold" value="Continuar"/>
                         </div>
+                        </form>
 
                         <hr>
 
@@ -125,7 +120,6 @@
                                 <input type="submit" value="Cadastrar" class="btn bg-azulClaro branco text-center f-text-80 pb-0" data-toggle="modal" data-target="#cadCurriculo">
                             </div>
                         </div>
-                    </form>
                 </div>
             </div>
         </div>
