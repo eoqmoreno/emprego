@@ -1,4 +1,4 @@
-<footer>
+<footer class="bottom">
     <div class="row w-100 m-0 p-0">
         <div class="col-sm-1 col-2 bg-azulClaro grafismo w-100">
         </div>
@@ -24,4 +24,5 @@
     <script src="../js/popper.min.js"></script>
     <script src="../js/main.js"></script>
     <script src="../js/ajax.js"></script>
+    <script src="../js/popup.js"></script>
 </html>

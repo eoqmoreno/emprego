@@ -6,7 +6,7 @@ $resultado = array();
 
 $row = $conn->query("SELECT * FROM vagas");
 while ($result = $row->fetch_assoc()) {
-    array_push($resultado, [$result['categoria'],$result['local'], $result['horas']]);
+    array_push($resultado, [$result['categoria'],$result['local'], $result['horas'],$result['foto']]);
 }
 
 // echo var_dump($resultado);

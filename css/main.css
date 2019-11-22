@@ -1,116 +1,157 @@
-:root{
---azulClaro: #2793FF;
---azulEscuro: #111E6C;
---roxo: #A10091;
+:root {
+    --azulClaro: #2793FF;
+    --azulEscuro: #111E6C;
+    --roxo: #A10091;
 }
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: var(--roxo);
-    opacity: 1; /* Firefox */
+    opacity: 1;
+    /* Firefox */
 }
-.navbar > div{
+
+.navbar>div {
     height: 100px;
 }
 
+
 /*Fonts*/
+
 @font-face {
     font-family: title;
     src: url("../fonts/title.ttf");
 }
+
 @font-face {
     font-family: text-bold;
     src: url("../fonts/text-bold.ttf");
 }
+
 @font-face {
     font-family: text-regular;
     src: url("../fonts/text-regular.ttf");
 }
+
 @font-face {
     font-family: text-thin;
     src: url("../fonts/text-thin.ttf");
 }
 
+
 /* Background */
-.bg-azulClaro{
+
+.bg-azulClaro {
     background-color: var(--azulClaro);
 }
-.bg-azulEscuro{
+
+.bg-azulEscuro {
     background-color: var(--azulEscuro);
 }
-.bg-roxo{
+
+.bg-roxo {
     background-color: var(--roxo);
 }
 
+.bg-branco {
+    background-color: white;
+}
+
+
 /*Border*/
-.b-azulClaro{
+
+.b-azulClaro {
     border: 1px solid var(--azulClaro);
 }
-.b-azulEscuro{
+
+.b-azulEscuro {
     border-color: var(--azulEscuro);
 }
-.b-roxo{
-    border-color: var(--roxo);
+
+.b-roxo {
+    border: 2px solid var(--roxo);
 }
-.b-branco{
+
+.b-branco {
     border: 1px solid white;
 }
+
+
 /*font-color*/
-.azulClaro{
+
+.azulClaro {
     color: var(--azulClaro);
 }
-.azulEscuro{
+
+.azulEscuro {
     color: var(--azulEscuro);
 }
-.roxo{
+
+.roxo {
     color: var(--roxo);
 }
-.branco{
+
+.branco {
     color: white;
 }
 
+
 /*fonts*/
-.f-title-150{
+
+.f-title-150 {
     font-family: title;
     font-size: 150%;
 }
-.f-title{
+
+.f-title {
     font-family: title;
 }
-.f-text{
+
+.f-text {
     font-family: text-regular;
 }
-.f-text-80{
+
+.f-text-80 {
     font-family: text-regular;
     font-size: 85%;
 }
-.f-text-bold{
+
+.f-text-bold {
     font-family: text-bold;
     padding-bottom: 0;
 }
-.f-text-thin{
+
+.f-text-thin {
     font-family: text-thin;
 }
+
+
 /*Carousel*/
-.img-carousel{
+
+.img-carousel {
     max-height: 400px;
     overflow: hidden;
 }
-.img-carousel img{
-}
 
-.img-perfil{
+.img-carousel img {}
+
+.img-perfil {
     width: 200px;
     height: 200px;
 }
 
+
 /*Cadastrado home*/
-.cadCurriculo{
+
+.cadCurriculo {
     height: 300px;
     background-image: url("../img/pessoa.png");
     background-size: auto 75%;
     background-repeat: no-repeat;
     background-position: bottom right;
 }
-.cadEmpresa{
+
+.cadEmpresa {
     height: 300px;
     background-image: url("../img/empresa.png");
     background-size: auto 75%;
@@ -118,38 +159,49 @@
     background-position: bottom right;
 }
 
+
 /*Rounded*/
-.rounded-left{
+
+.rounded-left {
     border-top-left-radius: 2rem!important;
     border-bottom-left-radius: 2rem!important;
 }
-.rounded-right{
+
+.rounded-right {
     border-top-right-radius: 2rem!important;
     border-bottom-right-radius: 2rem!important;
 }
 
+
 /*rounded-circle*/
-.height75{
+
+.height75 {
     height: 75px;
 }
 
+
 /*card*/
-.card-img-top{
+
+.card-img-top {
     width: 100%;
     border-top-left-radius: calc(2.25rem - 1px);
     border-top-right-radius: calc(2.25rem - 1px);
 }
-.card{
+
+.card {
     border: none;
     background: none;
     box-shadow: 0px 5px 5px#00000024;
     border-radius: 2.25rem;
 }
-.card-deck .card{
+
+.card-deck .card {
     margin-bottom: 15px;
 }
 
+
 /*modal*/
+
 .close {
     float: right;
     font-size: 1.5rem;
@@ -157,16 +209,21 @@
     text-shadow: none;
     opacity: unset;
 }
-.modal-header .close{
+
+.modal-header .close {
     padding: 1.5rem 1.5rem;
 }
 
+
 /* Lista */
-ul{
+
+ul {
     list-style: none;
 }
 
+
 /* Grafismos */
-.grafismo{
+
+.grafismo {
     background-image: url('../img/grafismo.png');
 }

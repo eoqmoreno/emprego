@@ -25,14 +25,16 @@
     </h3>
     
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <input type="text" name="" class="w-100 b-roxo f-title-150 text-center rounded-pill d-block d-sm-none" placeholder="Que tipo de emprego você procura?">
-        <input type="button" value="Entrar" class="btn bg-roxo w-100 branco text-center d-block d-sm-none border-0 f-title-150 mt-2" data-toggle="modal" data-target="#login">
-
+            <input type="text" name="pesquisa" class="w-100 b-roxo f-title-150 text-center rounded-pill d-block d-sm-none" id="pesquisa" placeholder="Que tipo de emprego você procura?">
+            <input type="button" value="Entrar" class="btn bg-roxo w-100 branco text-center d-block d-sm-none border-0 f-title-150 mt-2" data-toggle="modal" data-target="#login">
     </div>
 
 
     <div class="col-sm-8 text-center d-sm-block d-none h-50">
-        <input type="text" name="" class="w-50 bg-transparent align-middle h-100 rounded-pill text-center b-roxo f-title-150" placeholder="Que tipo de emprego você procura?">
+        <form class="form-group" id="form-pesquisa" method="post" action="./pesquisa.php">
+        <input type="text" name="pesquisa" class="w-50 bg-transparent align-middle h-100 rounded-pill text-center b-roxo f-title-150" placeholder="Que tipo de emprego você procura?" required>
+        <span class="fa fa-search roxo f-title-150 p-0 m-0" onclick="$('#form-pesquisa').submit()"></span>
+    </form>
     </div>
     <div class="col-sm-1 d-sm-block d-none "></div>
     <div class="bg-roxo col-sm-1 d-sm-block d-none">
@@ -49,9 +51,9 @@
                 '. strtok($result['nome'], ' ') .'
                 </button>
                 <div class="dropdown-menu">
-                <a class="dropdown-item" href="./php/perfil.php">Editar perfil</a>
+                <a class="dropdown-item" href="./perfil.php">Editar perfil</a>
                 <a class="dropdown-item" href="#">Outra ação</a>
-                <a class="dropdown-item" href="../php/sair.php">Sair</a>
+                <a class="dropdown-item" href="./sair.php">Sair</a>
                 </div>
               </div>';
             }
