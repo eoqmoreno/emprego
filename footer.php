@@ -25,4 +25,6 @@
     <script src="../js/main.js"></script>
     <script src="../js/ajax.js"></script>
     <script src="../js/popup.js"></script>
+    <!-- <script src="../js/sweetalert2.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 </html>

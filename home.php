@@ -65,6 +65,6 @@
     
 
     <div class="bg-branco pb-5 text-center">
-        <h1 class="f-title azulClaro p-4 w-100">Categorias</h1>
+        <h1 class="f-title azulClaro p-4 w-100" id="popup">Categorias</h1>
         <div class="row w-100 p-0 m-0 categorias"></div>
     </div>

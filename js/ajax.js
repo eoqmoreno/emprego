@@ -33,6 +33,9 @@ $(document).ready(function() {
             }
             str += '</div></div>';
             $('.cardpc').html(str);
+        },
+        error: function(request, status, error) {
+            alert(request.responseText);
         }
     });
 
@@ -57,6 +60,9 @@ $(document).ready(function() {
             }
             str += '</div></div>';
             $('.cardcell').html(str);
+        },
+        error: function(request, status, error) {
+            alert(request.responseText);
         }
     });
 
