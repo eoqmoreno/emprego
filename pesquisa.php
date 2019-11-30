@@ -18,10 +18,10 @@ $row = $conn->query("SELECT * FROM vagas WHERE categoria = '$pesquisa'");
     </a>
     <?php
     while ($result = $row->fetch_assoc()) {
-        echo '<div class="col-4 m-5 p-0">
+        echo '<div class="col-4 p-5">
         <a href="./mostrarVaga.php?pesquisa='.$result['id'].'">
         <div class="card text-left">
-            <img src="../img/vagas/cozinheira.jpeg" class="card-img-top" alt="...">
+            <img src="'.$result['foto'].'" class="card-img-top" alt="...">
             <div class="card-body p-0">
                 <h5 class="card-title bg-roxo branco w-100 text-center f-text pt-1 m-0">
                     ' . $result['categoria'] . '

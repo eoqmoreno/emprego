@@ -1,38 +1,7 @@
 <?php
-if (isset($_COOKIE['email'])) {
-    $email = $_COOKIE['email'];
-}else {
-    echo '<div class="alert alert-warning alert-dismissible fade show text-center" role="alert">
-    <strong>Para se cadastrar é necessário entrar!</strong>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>';
-}
-
 require './conn.php';
-if (isset($email)) {
-    $row = $conn->query("SELECT * FROM curriculo WHERE email='$email'");
-    while ($result = $row->fetch_assoc()) {
-        if ($result['dataDeNascimento'] == "") {
-            echo '<div class="alert alert-warning alert-dismissible fade show text-center" role="alert">
-            <strong>Para se cadastrar é necessário concluir o currículo!</strong>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>';
-        } 
-    }
-}
-
 include './modais.php';
 include './navbar.php';
-
-$pesquisa = ($_GET['pesquisa']);
-
-$row = $conn->query("SELECT * FROM vagas WHERE id = '$pesquisa'");
-while ($result = $row->fetch_assoc()) {
-
     ?>
 
     <div class="row m-0 mb-5 mt-5 p-0 w-100">

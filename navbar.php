@@ -39,12 +39,12 @@
     <div class="col-sm-1 d-sm-block d-none "></div>
     <div class="bg-roxo col-sm-1 d-sm-block d-none">
         <?php
-            if(!isset($_COOKIE['id'])){
+            if(!isset($_COOKIE['email'])){
                 ?>
         <input type="button" value="Entrar" class="bg-roxo border-0 w-100 h-100 branco text-center align-middle b-azulClaro f-title-150" data-toggle="modal" data-target="#login">
         <?php
             }else{
-                $row = $conn->query("SELECT * FROM curriculo WHERE id = ".$_COOKIE['id']);
+                $row = $conn->query("SELECT * FROM curriculo WHERE email = '".$_COOKIE['email']."'");
                 while ($result = $row->fetch_assoc()) {
                 echo '<div class="btn-group dropleft bg-roxo border-0 w-100 h-100 branco text-center align-middle b-azulClaro">
                 <button type="button" class="bg-roxo border-0 w-100 h-100 branco text-center f-title-150" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

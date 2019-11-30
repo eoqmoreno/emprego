@@ -25,10 +25,11 @@ if (!isset($_POST['data'])) {
 
 
 
-    $row = $conn->query("UPDATE curriculo SET nome='$nome', email='$email',telefone='$telefone',dataDeNascimento='$data',profissao='$profissao',escolaridade='$escolaridade',experiencia='$experiencia',curso='$curso',habilidades='$habilidades',foto='$destino' WHERE id='".$_COOKIE['id']."' ");
+    $row = $conn->query("UPDATE curriculo SET nome='$nome', email='$email',telefone='$telefone',dataDeNascimento='$data',profissao='$profissao',escolaridade='$escolaridade',experiencia='$experiencia',curso='$curso',habilidades='$habilidades',foto='$destino' WHERE email='".$_COOKIE['email']."' ");
 }
 
 if ($row === TRUE) {
+    setcookie("email", $email, time() + 3600 * 24 * 30, '/');
     setcookie("action", "cadastrado", time() + 3600 * 24 * 30, '/');
     header('Location: ./');
 } else {

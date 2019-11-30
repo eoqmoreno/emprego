@@ -1,7 +1,6 @@
 <?php
-    $_COOKIE['id'];
 
-    $row = $conn->query("SELECT * FROM curriculo WHERE id = ".$_COOKIE['id']);
+    $row = $conn->query("SELECT * FROM curriculo WHERE email = '".$_COOKIE['email']."'");
     while ($result = $row->fetch_assoc()) {
 ?>
     <div class="row mt-5 mb-5 m-0">

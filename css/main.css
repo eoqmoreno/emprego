@@ -133,8 +133,6 @@
     overflow: hidden;
 }
 
-.img-carousel img {}
-
 .img-perfil {
     width: 200px;
     height: 200px;
@@ -145,7 +143,7 @@
 
 .cadCurriculo {
     height: 300px;
-    background-image: url("../img/pessoa.png");
+    background-image: url("../icon/pessoa.svg");
     background-size: auto 75%;
     background-repeat: no-repeat;
     background-position: bottom right;
@@ -153,7 +151,7 @@
 
 .cadEmpresa {
     height: 300px;
-    background-image: url("../img/empresa.png");
+    background-image: url("../icon/empresa.svg");
     background-size: auto 75%;
     background-repeat: no-repeat;
     background-position: bottom right;
@@ -226,4 +224,8 @@ ul {
 
 .grafismo {
     background-image: url('../img/grafismo.png');
+}
+
+.check {
+    border-radius: 100%;
 }
