@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 29-Nov-2019 às 22:33
+-- Tempo de geração: 01-Dez-2019 às 17:00
 -- Versão do servidor: 10.4.8-MariaDB
 -- versão do PHP: 7.3.11
 
@@ -46,7 +46,8 @@ INSERT INTO `categorias` (`id`, `nome`, `quantidade`) VALUES
 (5, 'Fisioterapeuta', 5),
 (6, 'Engenheiro de software', 5),
 (7, 'Estatístico', 5),
-(8, 'Maestro', 5);
+(8, 'Maestro', 5),
+(9, 'Cozinheira', 5);
 
 -- --------------------------------------------------------
 
@@ -74,8 +75,37 @@ CREATE TABLE `curriculo` (
 --
 
 INSERT INTO `curriculo` (`id`, `nome`, `email`, `telefone`, `dataDeNascimento`, `escolaridade`, `profissao`, `experiencia`, `curso`, `habilidades`, `senha`, `foto`) VALUES
-(33, 'George Moreno de Oliveira', 'gmodeveloper@gmail.com', '(85) 9 9985-1155', '2000-08-25', 'Ensino superior incompleto', 'Designer', '', '', '', 'gmodev123,', './img/users/'),
-(34, 'Oia', 'oia@oia.com', '(88) 8 8888-8888', '', '', '', '', '', '', 'oia', '');
+(33, 'George Moreno de Oliveira', 'gmodeveloper@gmail.com', '(85) 9 9985-1155', '2000-08-25', 'Ensino superior incompleto', 'Designer', '', '', '', 'gmodev123,', './img/users/george.png'),
+(34, 'Oia', 'oia@oia.com', '(88) 8 8888-8888', '2000-08-25', 'Ensino superior incompleto', 'Designer', '', '', '', 'oia', './img/users/');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `empresa`
+--
+
+CREATE TABLE `empresa` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `area` varchar(255) NOT NULL,
+  `telefone` varchar(255) NOT NULL,
+  `senha` varchar(255) NOT NULL,
+  `endereco` varchar(255) NOT NULL,
+  `cnpj` varchar(255) NOT NULL,
+  `sobreE` longtext NOT NULL,
+  `sobreS` longtext NOT NULL,
+  `sobreF` longtext NOT NULL,
+  `foto` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `empresa`
+--
+
+INSERT INTO `empresa` (`id`, `nome`, `email`, `area`, `telefone`, `senha`, `endereco`, `cnpj`, `sobreE`, `sobreS`, `sobreF`, `foto`) VALUES
+(1, 'Bora Produtora', 'bora@gmail.com', 'Produtora Audiovisual', '(85) 9 9985-1155', 'oia', 'Rua Oscar Barbosa, 270, Baviera', '88.888.888/8888-88', '', '', '', './img/users/'),
+(12, 'Guiar', 'guiar@gmail.com', 'Produtora Cultural', '(85) 9 9985-1155', 'oia', 'Rua Oscar Barbosa, 270, Baviera', '88.888.888/8888-88', '', '', '', './img/users/video2.png');
 
 -- --------------------------------------------------------
 
@@ -86,23 +116,27 @@ INSERT INTO `curriculo` (`id`, `nome`, `email`, `telefone`, `dataDeNascimento`, 
 CREATE TABLE `vagas` (
   `id` int(11) NOT NULL,
   `categoria` varchar(255) NOT NULL,
-  `local` varchar(255) NOT NULL,
-  `horas` varchar(255) NOT NULL,
-  `endereco` varchar(255) NOT NULL,
-  `foto` varchar(255) NOT NULL
+  `turno` varchar(255) NOT NULL,
+  `foto` varchar(255) NOT NULL,
+  `criador` int(255) NOT NULL,
+  `candidatos` varchar(255) NOT NULL,
+  `dias` varchar(255) NOT NULL,
+  `habilidades` varchar(255) NOT NULL,
+  `salario` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `vagas`
 --
 
-INSERT INTO `vagas` (`id`, `categoria`, `local`, `horas`, `endereco`, `foto`) VALUES
-(1, 'Cozinheira', 'Tâmperro', '10', 'Rua Oscar Barbosa, N: 270', './img/vagas/cozinheira.jpeg'),
-(2, 'Designer', 'Gráfic', '5', '', './img/vagas/design.jpg'),
-(3, 'Vendedor', 'MaxStore', '5', '', './img/vagas/vendedor.jpg'),
-(4, 'Mecânico', 'LosCarros', '5', '', './img/vagas/mecanico.jpg'),
-(5, 'Mecânico', 'CarAlindo', '20', '', './img/vagas/mecanico.jpg'),
-(6, 'Mecânico', 'AmaCar', '40', '', './img/vagas/mecanico.jpg');
+INSERT INTO `vagas` (`id`, `categoria`, `turno`, `foto`, `criador`, `candidatos`, `dias`, `habilidades`, `salario`) VALUES
+(1, 'Cozinheira', 'Matutino', './img/vagas/cozinheira.jpeg', 1, '', 'Segunda,Terça,Quarta,Quinta,Sexta', '', '10000'),
+(2, 'Designer', '5', './img/vagas/design.jpg', 1, '', 'Segunda,Terça,Quarta,Quinta,Sexta', '', ''),
+(3, 'Vendedor', '5', './img/vagas/vendedor.jpg', 1, '', 'Segunda,Terça,Quarta,Quinta,Sexta', '', ''),
+(4, 'Mecânico', '5', './img/vagas/mecanico.jpg', 1, '', 'Segunda,Terça,Quarta,Quinta,Sexta', '', ''),
+(5, 'Mecânico', '20', './img/vagas/mecanico.jpg', 1, '', 'Segunda,Terça,Quarta,Quinta,Sexta', '', ''),
+(6, 'Mecânico', '40', './img/vagas/mecanico.jpg', 1, '', 'Segunda,Terça,Quarta,Quinta,Sexta', '', ''),
+(7, 'Designer', '', './img/users/george.png', 1, '', 'Segunda,Terça,Quarta,Quinta,Sexta', 'Produtivo', '');
 
 --
 -- Índices para tabelas despejadas
@@ -121,6 +155,12 @@ ALTER TABLE `curriculo`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Índices para tabela `empresa`
+--
+ALTER TABLE `empresa`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Índices para tabela `vagas`
 --
 ALTER TABLE `vagas`
@@ -134,7 +174,7 @@ ALTER TABLE `vagas`
 -- AUTO_INCREMENT de tabela `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de tabela `curriculo`
@@ -143,10 +183,16 @@ ALTER TABLE `curriculo`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
+-- AUTO_INCREMENT de tabela `empresa`
+--
+ALTER TABLE `empresa`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
 -- AUTO_INCREMENT de tabela `vagas`
 --
 ALTER TABLE `vagas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

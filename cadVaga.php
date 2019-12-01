@@ -1,94 +1,42 @@
 <?php
-// $_COOKIE['id'];
 
-require './conn.php';
-include './modais.php';
-include './navbar.php';
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+}
 
-?>
-<div class="row mt-5 mb-5 m-0">
-    <h1 class="col-sm-1" aria-hidden=""></h1>
-    <h1 class="f-title azulClaro pb-4 w-100 text-center col-sm-10">Vamos cadastrar uma vaga!</h1>
-    <a href="../">
-        <h1 class="fa fa-times-circle col-sm-1" aria-hidden="true"></h1>
-    </a>
+include './conn.php';
 
-    <div class="col-sm-6 bg-azulClaro p-5 rounded-right">
-        <form action="cadCurriculo.php" enctype="multipart/form-data" method="post" autocomplete="" class="">
-            <div class="text-center h-100 my-auto">
-                <img src="../icon/foto.png" class="img-perfil" alt="" id="fotoPerfil">
-                <input type="file" accept="image/png, image/jpeg" name="foto" id="fotoInput" class="d-none">
-            </div>
-    </div>
+$categoria = $_POST['categoria'];
+$salario = $_POST['salario'];
+$turno = $_POST['turno'];
+$dias = implode(",",$_POST['dia']);
+$habilidades = $_POST['habilidades'];
 
-    <div class="col-sm-6">
+if (!isset($id)) {
+    if(!empty($_FILES['foto'])){
+        $foto = $_FILES['foto']['tmp_name'];
+        $destino = './img/users/' . $_FILES['foto']['name'];
+        $row = $conn->query("INSERT INTO vagas (categoria, salario, turno, dias, habilidades,foto) VALUES ('$categoria', '$salario', '$turno', '$dias','$habilidades','$destino')");
+        move_uploaded_file( $foto, $destino);
+    }else{
+        $row = $conn->query("INSERT INTO vagas (categoria, salario, turno, dias, habilidades) VALUES ('$categoria', '$salario', '$turno', '$dias','$habilidades')");
+    }
+    
+} else {
+    if(!empty($_FILES['foto'])){
+        $foto = $_FILES['foto']['tmp_name'];
+        $destino = './img/users/' . $_FILES['foto']['name'];
+        $row = $conn->query("UPDATE vagas SET categoria='$categoria', salario='$salario',turno='$turno',dias='$dias',habilidades='$habilidades',foto='$foto' WHERE id='".$id ."' ");
+        move_uploaded_file( $foto, $destino);
+    }else{
+        $row = $conn->query("UPDATE vagas SET categoria='$categoria', salario='$salario',turno='$turno',dias='$dias',habilidades='$habilidades' WHERE id='".$id ."' ");    
+    }
+}
 
-        <div class="form-group">
-            <label for="" class="azulClaro text">Cargo ou categoria:*</label>
-            <select name="profissao" class="form-control azulClaro b-azulClaro" required>
-                <option value=''>Selecionar</option>
-                <option value=''>Design</option>
-                <option value=''>Vendedor</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="" class="azulClaro text">Salario:</label>
-            <input type="text" class="form-control bg-branco azulClaro b-azulClaro" placeholder="R$">
-        </div>
-
-        <div class="form-group">
-            <label for="" class="azulClaro text">Turno:*</label>
-            <select name="profissao" class="form-control azulClaro b-azulClaro" required>
-                <option value=''>Selecionar</option>
-                <option value=''>Matutino</option>
-                <option value=''>Noturno</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="" class="azulClaro text">Dias da semana:*</label>
-            <div class="row">
-
-                <div class="text-center col-2">
-                    <input type="checkbox" id="seg" class="check"> <br>
-                    <label for="seg" class="azulClaro">Seg</label>
-                </div>
-                <div class="text-center col-2">
-                    <input type="checkbox" id="ter" class="check"> <br>
-                    <label for="ter" class="azulClaro">Ter</label>
-                </div>
-                <div class="text-center col-2">
-                    <input type="checkbox" id="qua" class="check"> <br>
-                    <label for="qua" class="azulClaro">Qua</label>
-                </div>
-                <div class="text-center col-2">
-                    <input type="checkbox" id="qui" class="check"> <br>
-                    <label for="qui" class="azulClaro">Qui</label>
-                </div>
-                <div class="text-center col-2">
-                    <input type="checkbox" id="sex" class="check"> <br>
-                    <label for="sex" class="azulClaro">Sex</label>
-                </div>
-                <div class="text-center col-2">
-                    <input type="checkbox" id="sab" class="check"> <br>
-                    <label for="sab" class="azulClaro">Sab</label>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="form-group">
-            <label for="" class="azulClaro text">Requisitos da vaga:*</label>
-            <textarea name="habilidades" class="form-control bg-branco azulClaro b-azulClaro" cols="30" rows="3" placeholder="Ex: Habilidade 1; Habilidade 2"></textarea>
-        </div>
-
-        <div class="text-right">
-            <input type="submit" class="btn bg-azulClaro branco f-text-bold" value="Cadastrar" />
-        </div>
-        </form>
-    </div>
-</div>
-<?php
-include './footer.php';
-?>
+if ($row == true) {
+    setcookie("action", "cadastrado", time() + 3600 * 24 * 30, '/');
+    header('Location: ./');
+} else {
+    setcookie("action", "naocadastrado", time() + 3600 * 24 * 30, '/');
+    header('Location: ./');
+}

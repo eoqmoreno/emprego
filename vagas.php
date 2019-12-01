@@ -6,7 +6,17 @@ $resultado = array();
 
 $row = $conn->query("SELECT * FROM vagas");
 while ($result = $row->fetch_assoc()) {
-    array_push($resultado, [$result['categoria'],$result['local'], $result['horas'],$result['foto'], $result['id']]);
+    $r = $conn->query("SELECT * FROM empresa WHERE id = '".$result['criador']."'");
+    $local = "";
+    while ($res = $r->fetch_assoc()) {
+        $local= $res['endereco'];
+    }
+
+    $ar = explode(",",$result['dias']);
+    $total = (count($ar)) - 1;
+    $dias = $ar[0] . " a " . $ar[$total];
+
+    array_push($resultado,[ $result['id'], $result['foto'],$result['categoria'],$local, $dias]);
 }
 
 // echo var_dump($resultado);

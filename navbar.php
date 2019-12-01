@@ -34,7 +34,7 @@
 
 
         <div class="col-sm-8 text-center d-sm-block d-none h-50">
-            <form class="form-group" id="form-pesquisa" method="post" action="./pesquisa.php">
+            <form class="form-group" id="form-pesquisa" method="get" action="./pesquisa.php">
                 <input type="text" name="pesquisa" class="w-50 bg-transparent align-middle h-100 rounded-pill text-center b-roxo f-title-150" placeholder="Que tipo de emprego você procura?" required>
                 <span class="fa fa-search roxo f-title-150 p-0 m-0" onclick="$('#form-pesquisa').submit()"></span>
             </form>

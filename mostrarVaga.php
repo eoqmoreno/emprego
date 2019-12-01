@@ -1,29 +1,12 @@
 <?php
 if (isset($_COOKIE['email'])) {
     $email = $_COOKIE['email'];
-}else {
-    echo '<div class="alert alert-warning alert-dismissible fade show text-center" role="alert">
-    <strong>Para se cadastrar é necessário entrar!</strong>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>';
+    $tipo = $_COOKIE['tipo'];
 }
 
+
 require './conn.php';
-if (isset($email)) {
-    $row = $conn->query("SELECT * FROM curriculo WHERE email='$email'");
-    while ($result = $row->fetch_assoc()) {
-        if ($result['dataDeNascimento'] == "") {
-            echo '<div class="alert alert-warning alert-dismissible fade show text-center" role="alert">
-            <strong>Para se cadastrar é necessário concluir o currículo!</strong>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>';
-        } 
-    }
-}
+
 
 include './modais.php';
 include './navbar.php';
@@ -42,44 +25,48 @@ while ($result = $row->fetch_assoc()) {
             <h1 class="fa fa-times-circle col-sm-1 azulEscuro" aria-hidden="true"></h1>
         </a>
 
-        <div class="col-sm-1 m-0 p-0 bg-azulClaro">
+        <div class="col-sm-1 m-0 p-0 bg-azulEscuro rounded-right">
         </div>
         <div class="col-sm-5 m-0 p-0 text-center">
             <div class="pt-5">
                 <img src="<?php echo $result['foto']; ?>" class="img-perfil rounded-circle" alt="">
             </div>
-            <div class="text-left mt-5 p-5">
-                <div class="row m-0 p-0">
-                    <img src="./icon/local.png" alt="" class="d-inline col-3 h-100 my-auto">
+            <div class="text-left mt-2 p-5 row">
+                <div class="row m-0 p-0 col-6 h-100">
+                    <div class="d-inline col-3 m-0 p-1 h-100 text-center">
+                        <img src="./icon/local.png" alt="" class="w-50 my-auto">
+                    </div>
                     <p class="f-text p-0 m-0 col-9 my-auto"><?php echo $result['local'] . "<br>" . $result['endereco']; ?></p>
                 </div>
 
                 <br>
-                <div class="row m-0 p-0">
-                    <img src="./icon/hora.png" alt="" class="d-inline col-3 h-100 my-auto">
+                <div class="row m-0 p-0 col-6 h-100">
+                    <div class="d-inline col-3 m-0 p-1 h-100 text-center">
+                        <img src="./icon/hora.png" alt="" class="w-75 my-auto">
+                    </div>
                     <p class="f-text p-0 m-0 col-9 my-auto"><?php echo $result['horas']; ?> semanais<br>De sengunda a sexta<br>de 10h-12h</p>
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 m-0 p-0 bg-azulClaro">
-            <div class="form-group pr-5 pl-5 h-100">
-                <form action="" method="POST">
+
+        <div class="col-sm-6 m-0 p-0 bg-azulEscuro rounded-left h-auto">
+            <div class="form-group pr-5 pl-5 h-content align-middle">
+                <form action="entraVaga.php" method="POST">
                     <label for="" class="branco text">Objetivo para a vaga:</label>
-                    <textarea name="experiencia" class="form-control bg-branco azulClaro b-azulClaro" cols="30" rows="3" placeholder="Escreva aqui os objetivos que expera alcançar se contratado"></textarea>
+                    <textarea name="experiencia" class="form-control bg-branco azulEscuro b-azulEscuro" cols="30" rows="3" placeholder="Escreva aqui os objetivos que expera alcançar se contratado"></textarea>
                     <div class="text-right mt-3">
                         <?php
                             if (isset($email)) {
-                                $row = $conn->query("SELECT * FROM curriculo WHERE email='$email'");
-                                while ($result = $row->fetch_assoc()) {
-                                    if ($result['dataDeNascimento'] == "") {
-                                        $link = "./perfil.php";
-                                        echo '<input type="button" onclick="oia()" class="btn bg-branco azulEscuro f-text-bold" value="Cadastrar"><script>function oia(){location.href = "./perfil.php"}</script>';
-                                    } else {
-                                        echo '<input type="submit" class="btn bg-branco azulEscuro f-text-bold" value="Cadastrar">';
+                                if ($tipo == "curriculo") {
+                                    $row = $conn->query("SELECT * FROM curriculo WHERE email='$email'");
+                                    while ($result = $row->fetch_assoc()) {
+                                        if ($result['dataDeNascimento'] != "") {
+                                            echo '<input type="submit" class="btn bg-branco azulEscuro f-text-bold" value="Cadastrar">';
+                                        }
                                     }
                                 }
                             }
-                            ?> 
+                            ?>
                     </div>
                 </form>
             </div>
@@ -92,4 +79,37 @@ while ($result = $row->fetch_assoc()) {
     </div>
     <?php
     include './footer.php';
+
+    if (!isset($email)) {
+        echo "<script>
+        Swal.fire({
+            icon: 'warning',
+        title: 'Oops...',
+        text: 'Para se cadastrar é necessário fazer o cadastro!'
+        });
+      </script>";
+    }
+
+    if (isset($email)) {
+        $row = $conn->query("SELECT * FROM curriculo WHERE email='$email'");
+        while ($result = $row->fetch_assoc()) {
+            if ($result['dataDeNascimento'] == "") {
+                echo "<script>
+                Swal.fire({
+                    title: 'Oops...',
+                    text: 'Para se cadastrar é necessário preencher seu currículo',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Fazer currículo'
+                    }).then((result) => {
+                        if (result.value) {
+                            location.replace('./perfil.php');
+                        }
+                    })
+                      </script>";
+            }
+        }
+    }
     ?>

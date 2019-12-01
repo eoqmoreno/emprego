@@ -15,16 +15,26 @@
             <span class="far fa-copyright f-text-80"></span>
             <p class="f-text-80 d-inline"> Copyrights - Todo os direitos reservados a equipe de desenvolvimento da plataforma</p>
         </div>
+
+        <div class="col-sm-5 p-5">
+            <h6 class="azulClaro f-text-bold">Quer saber mais sobre a nossa identidade visual?</h6>
+            <p class="f-text-80">
+                É só você clicar <a class="f-text-bold" href="./manual">aqui</a> para ter acesso ao manual e a todos os downloads da nossa identidade.
+            </p>
+        </div>
+        <div class="col-sm-1 col-2 bg-azulClaro grafismo w-100">
+        </div>
     </div>
 </footer>
 </body>
-    <script src="../js/jquery-3.4.1.min.js"></script>
-    <script src="../js/jquery.mask.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/popper.min.js"></script>
-    <script src="../js/main.js"></script>
-    <script src="../js/ajax.js"></script>
-    <script src="../js/popup.js"></script>
-    <!-- <script src="../js/sweetalert2.min.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script src="../js/jquery-3.4.1.min.js"></script>
+<script src="../js/jquery.mask.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/popper.min.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/ajax.js"></script>
+<script src="../js/popup.js"></script>
+<!-- <script src="../js/sweetalert2.min.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
 </html>

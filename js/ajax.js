@@ -7,7 +7,8 @@ $(document).ready(function() {
         success: function(resultado) {
             var str = "";
             for (let index = 0; index < resultado.length; index++) {
-                str += "<div class='col-sm-3 col-6 pb-5'><input type='button' value='" + resultado[index] + "' class='btn bg-azulClaro branco f-text-bold rounded-pill w-100'></div>";
+                var link = 'window.location.href = "./pesquisa.php?pesquisa=' + resultado[index] + '"'; 
+                str += "<div class='col-sm-3 col-6 pb-5'><input type='button' value='" + resultado[index] + "' class='btn bg-azulClaro branco f-text-bold rounded-pill w-100' onclick='"+ link +"'></div>";
             }
             $('.categorias').html(str);
         },
@@ -40,7 +41,7 @@ $(document).ready(function() {
     });
 
     function cardsearch(result) {
-        return '<a href="./mostrarVaga.php?pesquisa='+ result[4] +'" class="text-decoration-none"><div class="card text-left"><img src="' + result[3] + '" class="card-img-top" alt="..."><div class="card-body p-0"><h5 class="card-title bg-azulClaro branco w-100 text-center f-text pt-1 m-0">' + result[0] + '</h5><ul class="card-text list-group text-center azulEscuro f-text-bold mt-2"><li><span class="fas fa-map-marker-alt"></span> ' + result[1] + '</li><li><span class="fas fa-clock"></span> ' + result[2] + ' semanais</li></ul></div></a></div>';
+        return '<a href="./mostrarVaga.php?pesquisa='+ result[0] +'" class="text-decoration-none"><div class="card text-left"><img src="' + result[1] + '" class="card-img-top" alt="..."><div class="card-body p-0"><h5 class="card-title bg-azulClaro branco w-100 text-center f-text pt-1 m-0">' + result[2] + '</h5><ul class="card-text list-group text-center azulEscuro f-text-bold mt-2"><li><span class="fas fa-map-marker-alt"></span> ' + result[3] + '</li><li><span class="fas fa-clock"></span> ' + result[4] + '</li></ul></div></a></div>';
     }
 
     $.ajax({
