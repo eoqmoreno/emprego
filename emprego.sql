@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 01-Dez-2019 às 17:00
+-- Tempo de geração: 02-Dez-2019 às 04:07
 -- Versão do servidor: 10.4.8-MariaDB
 -- versão do PHP: 7.3.11
 
@@ -21,6 +21,27 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `emprego`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `cadastro`
+--
+
+CREATE TABLE `cadastro` (
+  `id` int(11) NOT NULL,
+  `idc` int(255) NOT NULL,
+  `idv` int(255) NOT NULL,
+  `objetivo` varchar(255) NOT NULL,
+  `coracao` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `cadastro`
+--
+
+INSERT INTO `cadastro` (`id`, `idc`, `idv`, `objetivo`, `coracao`) VALUES
+(2, 33, 10, 'Ganhar dinheiro', 0);
 
 -- --------------------------------------------------------
 
@@ -136,11 +157,17 @@ INSERT INTO `vagas` (`id`, `categoria`, `turno`, `foto`, `criador`, `candidatos`
 (4, 'Mecânico', '5', './img/vagas/mecanico.jpg', 1, '', 'Segunda,Terça,Quarta,Quinta,Sexta', '', ''),
 (5, 'Mecânico', '20', './img/vagas/mecanico.jpg', 1, '', 'Segunda,Terça,Quarta,Quinta,Sexta', '', ''),
 (6, 'Mecânico', '40', './img/vagas/mecanico.jpg', 1, '', 'Segunda,Terça,Quarta,Quinta,Sexta', '', ''),
-(7, 'Designer', '', './img/users/george.png', 1, '', 'Segunda,Terça,Quarta,Quinta,Sexta', 'Produtivo', '');
+(10, 'Designer', 'Matutino', './img/users/george.png', 12, '', 'Segunda,Terça,Quarta,Quinta,Sexta', 'Produtivo', '100,00');
 
 --
 -- Índices para tabelas despejadas
 --
+
+--
+-- Índices para tabela `cadastro`
+--
+ALTER TABLE `cadastro`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Índices para tabela `categorias`
@@ -171,6 +198,12 @@ ALTER TABLE `vagas`
 --
 
 --
+-- AUTO_INCREMENT de tabela `cadastro`
+--
+ALTER TABLE `cadastro`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT de tabela `categorias`
 --
 ALTER TABLE `categorias`
@@ -192,7 +225,7 @@ ALTER TABLE `empresa`
 -- AUTO_INCREMENT de tabela `vagas`
 --
 ALTER TABLE `vagas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

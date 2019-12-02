@@ -13,12 +13,21 @@ $row = $conn->query("SELECT * FROM vagas WHERE categoria = '$pesquisa'");
 <div class="row mb-5 mt-5 p-0 w-100">
     <h1 class="col-sm-1" aria-hidden=""></h1>
     <h1 class="f-title roxo pb-4 w-100 text-center col-sm-10">Tá aí o que você procura!</h1>
-    <a href="../">
-        <h1 class="fa fa-times-circle col-sm-1 roxo" aria-hidden="true"></h1>
-    </a>
+    <div class=" col-sm-1 text-center" onclick="sair()">
+        <h1 class="fa fa-times-circle roxo" aria-hidden="true"></h1>
+    </div>
     <?php
     if ($row) {
         while ($result = $row->fetch_assoc()) {
+            $r = $conn->query("SELECT * FROM empresa WHERE id = '" . $result['criador'] . "'");
+            $local = "";
+            while ($res = $r->fetch_assoc()) {
+                $local = $res['endereco'];
+            }
+
+            $ar = explode(",", $result['dias']);
+            $total = (count($ar)) - 1;
+            $dias = $ar[0] . " a " . $ar[$total];
             echo '<div class="col-4 p-5">
             <a href="./mostrarVaga.php?pesquisa=' . $result['id'] . '">
             <div class="card text-left">
@@ -29,10 +38,10 @@ $row = $conn->query("SELECT * FROM vagas WHERE categoria = '$pesquisa'");
                     </h5>
                     <ul class="card-text list-group text-center azulEscuro f-text-bold mt-2">
                     <li>
-                    <span class="fas fa-map-marker-alt"></span> ' . $result['local'] . '
+                    <span class="fas fa-map-marker-alt"></span> ' . $local . '
                     </li>
                     <li>
-                    <span class="fas fa-clock"></span> ' . $result['horas'] . ' semanais
+                    <span class="fas fa-clock"></span> ' . $dias . '
                     </li>
                     </ul>
                     </div>
@@ -40,7 +49,7 @@ $row = $conn->query("SELECT * FROM vagas WHERE categoria = '$pesquisa'");
                     </a>
                     </div>';
         };
-    }else{
+    } else {
         echo '<h3 class="f-title roxo pb-4 w-100 text-center col-sm-10">Ainda não há vagas nessa cetegoria</h3>';
     }
     ?>

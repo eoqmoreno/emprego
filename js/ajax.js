@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $.ajax({
-        url: '../categorias.php',
+        url: '../ajax/categorias.php',
         data: 'nome=nome1',
         type: 'POST',
         dataType: 'json',
@@ -18,7 +18,7 @@ $(document).ready(function() {
     });
 
     $.ajax({
-        url: '../vagas.php',
+        url: '../ajax/vagas.php',
         data: 'categoria=cat,local=loc,horas=hr',
         type: 'POST',
         dataType: 'json',
@@ -45,7 +45,7 @@ $(document).ready(function() {
     }
 
     $.ajax({
-        url: '../vagas.php',
+        url: '../ajax/vagas.php',
         data: 'categoria=cat,local=loc,horas=hr',
         type: 'POST',
         dataType: 'json',

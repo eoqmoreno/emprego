@@ -27,14 +27,6 @@
     </div>
 </footer>
 </body>
-<script src="../js/jquery-3.4.1.min.js"></script>
-<script src="../js/jquery.mask.min.js"></script>
-<script src="../js/bootstrap.min.js"></script>
-<script src="../js/popper.min.js"></script>
-<script src="../js/main.js"></script>
-<script src="../js/ajax.js"></script>
-<script src="../js/popup.js"></script>
-<!-- <script src="../js/sweetalert2.min.js"></script> -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
 
 </html>
