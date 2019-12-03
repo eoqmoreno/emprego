@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 02-Dez-2019 às 04:07
+-- Tempo de geração: 03-Dez-2019 às 19:21
 -- Versão do servidor: 10.4.8-MariaDB
--- versão do PHP: 7.3.11
+-- versão do PHP: 7.3.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -41,7 +41,7 @@ CREATE TABLE `cadastro` (
 --
 
 INSERT INTO `cadastro` (`id`, `idc`, `idv`, `objetivo`, `coracao`) VALUES
-(2, 33, 10, 'Ganhar dinheiro', 0);
+(4, 36, 19, 'Ganhar dinheiro', 1);
 
 -- --------------------------------------------------------
 
@@ -59,15 +59,16 @@ CREATE TABLE `categorias` (
 -- Extraindo dados da tabela `categorias`
 --
 
-INSERT INTO `categorias` (`nome`, `quantidade`) VALUES
-('Designer', 0),
-('Vendedora', 0),
-('Mecânico', 0),
-('Analista de sistemas', 0),
-('Fisioterapeuta', 0),
-('Engenheiro de software', 0),
-('Estatístico', 0),
-('Cozinheira', 0);
+INSERT INTO `categorias` (`id`, `nome`, `quantidade`) VALUES
+(10, 'Designer', 1),
+(11, 'Vendedor', 1),
+(12, 'Mecânico', 1),
+(13, 'Analista de sistemas', 1),
+(14, 'Fisioterapeuta', 0),
+(15, 'Engenheiro de software', 1),
+(16, 'Estatístico', 0),
+(17, 'Cozinheira', 0),
+(18, 'Cabeleireira', 1);
 
 -- --------------------------------------------------------
 
@@ -95,8 +96,8 @@ CREATE TABLE `curriculo` (
 --
 
 INSERT INTO `curriculo` (`id`, `nome`, `email`, `telefone`, `dataDeNascimento`, `escolaridade`, `profissao`, `experiencia`, `curso`, `habilidades`, `senha`, `foto`) VALUES
-(33, 'George Moreno de Oliveira', 'gmodeveloper@gmail.com', '(85) 9 9985-1155', '2000-08-25', 'Ensino superior incompleto', 'Designer', '', '', '', 'gmodev123,', './img/users/george.png'),
-(34, 'Oia', 'oia@oia.com', '(88) 8 8888-8888', '2000-08-25', 'Ensino superior incompleto', 'Designer', '', '', '', 'oia', './img/users/');
+(36, 'George Moreno de Oliveira', 'gmodeveloper@gmail.com', '(88) 8 8888-8888', '2000-08-25', 'Ensino superior incompleto', 'Designer', '', '', 'criativo', 'oia', './img/users/designer.png'),
+(37, 'Maria Helena', 'helena@gmail.com', '(88) 9 8888-8888', '1998-04-10', 'Ensino médio completo', 'Cabeleireira', '', '', 'experiente', 'oia', './img/users/helena.png');
 
 -- --------------------------------------------------------
 
@@ -124,8 +125,9 @@ CREATE TABLE `empresa` (
 --
 
 INSERT INTO `empresa` (`id`, `nome`, `email`, `area`, `telefone`, `senha`, `endereco`, `cnpj`, `sobreE`, `sobreS`, `sobreF`, `foto`) VALUES
-(1, 'Bora Produtora', 'bora@gmail.com', 'Produtora Audiovisual', '(85) 9 9985-1155', 'oia', 'Rua Oscar Barbosa, 270, Baviera', '88.888.888/8888-88', '', '', '', './img/users/'),
-(12, 'Guiar', 'guiar@gmail.com', 'Produtora Cultural', '(85) 9 9985-1155', 'oia', 'Rua Oscar Barbosa, 270, Baviera', '88.888.888/8888-88', '', '', '', './img/users/video2.png');
+(18, 'Desenvolve', 'desenvolve@gmail.com', 'Soluções tecnológicas', '(88) 8 8888-8888', 'oia', 'Rua N, Nº: 250', '88.888.888/8888-88', '', '', '', './img/users/'),
+(19, 'LoCar', 'locar@gmail.com', 'Aluguel de Carros', '(88) 8 8888-8888', 'oia', 'Rua X, Nº: 50', '88.888.888/8888-88', '', '', '', './img/users/'),
+(20, 'LaBella', 'labella@gmail.com', 'Salão de Beleza', '(88) 9 8888-8888', 'oia', 'Rua Oscar Barbosa, Nº: 500', '88.888.888/8888-88', '', '', '', './img/users/labella.jpg');
 
 -- --------------------------------------------------------
 
@@ -138,25 +140,23 @@ CREATE TABLE `vagas` (
   `categoria` varchar(255) NOT NULL,
   `turno` varchar(255) NOT NULL,
   `foto` varchar(255) NOT NULL,
-  `criador` int(255) NOT NULL,
-  `candidatos` varchar(255) NOT NULL,
   `dias` varchar(255) NOT NULL,
   `habilidades` varchar(255) NOT NULL,
-  `salario` varchar(255) NOT NULL
+  `salario` varchar(255) NOT NULL,
+  `criador` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `vagas`
 --
 
-INSERT INTO `vagas` (`id`, `categoria`, `turno`, `foto`, `criador`, `candidatos`, `dias`, `habilidades`, `salario`) VALUES
-(1, 'Cozinheira', 'Matutino', './img/vagas/cozinheira.jpeg', 1, '', 'Segunda,Terça,Quarta,Quinta,Sexta', '', '10000'),
-(2, 'Designer', '5', './img/vagas/design.jpg', 1, '', 'Segunda,Terça,Quarta,Quinta,Sexta', '', ''),
-(3, 'Vendedor', '5', './img/vagas/vendedor.jpg', 1, '', 'Segunda,Terça,Quarta,Quinta,Sexta', '', ''),
-(4, 'Mecânico', '5', './img/vagas/mecanico.jpg', 1, '', 'Segunda,Terça,Quarta,Quinta,Sexta', '', ''),
-(5, 'Mecânico', '20', './img/vagas/mecanico.jpg', 1, '', 'Segunda,Terça,Quarta,Quinta,Sexta', '', ''),
-(6, 'Mecânico', '40', './img/vagas/mecanico.jpg', 1, '', 'Segunda,Terça,Quarta,Quinta,Sexta', '', ''),
-(10, 'Designer', 'Matutino', './img/users/george.png', 12, '', 'Segunda,Terça,Quarta,Quinta,Sexta', 'Produtivo', '100,00');
+INSERT INTO `vagas` (`id`, `categoria`, `turno`, `foto`, `dias`, `habilidades`, `salario`, `criador`) VALUES
+(18, 'Analista de sistemas', 'Matutino', './img/users/analista.png', 'Segunda,Terça,Quarta,Quinta', 'ágil, rápido, equipe', '1.000,00', 18),
+(19, 'Designer', 'Matutino', './img/users/designer.png', 'Segunda,Terça,Quarta,Quinta,Sexta,Sabado', 'criativo', '2.000,00', 18),
+(20, 'Engenheiro de software', 'Noturno', './img/users/es.png', 'Segunda,Terça,Quarta', 'rápido, seguro', '1.500,00', 18),
+(21, 'Mecânico', 'Matutino', './img/users/mecanico.png', 'Segunda,Terça,Quarta,Quinta,Sexta', 'cuidadoso, ágil', '975,00', 19),
+(22, 'Vendedor', 'Matutino', './img/users/vendedor.png', 'Segunda,Terça,Quinta,Sexta', 'comunicativo', '1.500,00', 19),
+(23, 'Cabeleireira', 'Matutino', './img/users/cabeleleira.png', 'Quinta,Sexta,Sabado', 'experiente', '500,00', 20);
 
 --
 -- Índices para tabelas despejadas
@@ -200,31 +200,31 @@ ALTER TABLE `vagas`
 -- AUTO_INCREMENT de tabela `cadastro`
 --
 ALTER TABLE `cadastro`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de tabela `curriculo`
 --
 ALTER TABLE `curriculo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT de tabela `empresa`
 --
 ALTER TABLE `empresa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de tabela `vagas`
 --
 ALTER TABLE `vagas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
