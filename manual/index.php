@@ -22,7 +22,7 @@ include "../navbar.php";
                 </a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" href="#identidade">Início</a>
-                    <a class="dropdown-item" href="#variacoesicone">Variações de Icone</a>
+                    <a class="dropdown-item" href="#variacoesicone">Variações de Ícone</a>
                     <a class="dropdown-item" href="#paleta">Paleta de Cores</a>
                     <a class="dropdown-item" href="#harmonia">Harmonia Acromática</a>
                 </div>
@@ -58,7 +58,7 @@ include "../navbar.php";
                 comunicatividade, dando a oportunidade aos nossos usuários de tornar mais rápido e eficiente o processo
                 de contratação. A plataforma permite que você
                 cadastre currículos e cadastre vagas. Além de combinar dados entre empregador e o empregado.<br>
-                Pensando nisso, a empregô, busca trazer em sua identidade visual, os principios da conectividade,
+                Pensando nisso, a Empregô, busca trazer em sua identidade visual, os principios da conectividade,
                 comunicabilidade, e agilidade,
                 propondo desenvolver a melhor maneira de responder às necessidades. Este manual de marca tem como
                 objetivo apresentar os conceitos e normas de uso do logotipo em todas as suas variações e aplicações.
@@ -74,13 +74,13 @@ include "../navbar.php";
     <div class="w-100 row p-0 m-0">
         <div class="w-100 row p-0 m-0 pt-4 pb-4" id="identidade">
             <h1 class="f-title azulClaro text-center w-100 col-50">Identidade Visual</h1>
-            <div class="col text-center azulClaro f-text-bold">Logo e icone</div>
+            <div class="col text-center azulClaro f-text-bold">Logo e ícone</div>
         </div>
         <div class="col-12 col-sm-6 text-center">
             <img class="w-75" src="./img/logohc.png">
             <p class="f-text-80">Logo Empregô</p>
             <img class="w-50" src="./img/logovc.png">
-            <p class="f-text-80">Icone Empregô</p>
+            <p class="f-text-80">Ícone Empregô</p>
         </div>
         <div class="col-12 col-sm-6 text-center">
             <p class="text-justify p-3">
@@ -95,19 +95,19 @@ include "../navbar.php";
 
     <div class="w-100 row p-0 m-0" id="variacoesicone">
         <div class="w-100 row p-0 m-0 pt-4 pb-4">
-            <h1 class="f-title azulClaro text-center w-100">Variações do Icone</h1>
+            <h1 class="f-title azulClaro text-center w-100">Variações do Ícone</h1>
         </div>
         <div class="col-4 text-center">
             <img class="w-50" src="./img/simbolomb3.png">
-            <p class="f-text-80">Icone Empregô</p>
+            <p class="f-text-80">Ícone Empregô</p>
         </div>
         <div class="col-4 text-center">
             <img class="w-50" src="./img/simbolomb2.png">
-            <p class="f-text-80">Icone Empregô</p>
+            <p class="f-text-80">Ícone Empregô</p>
         </div>
         <div class="col-4 text-center">
             <img class="w-50" src="./img/simbolomb.png">
-            <p class="f-text-80">Icone Empregô</p>
+            <p class="f-text-80">Ícone Empregô</p>
         </div>
 
         <p class="text-justify p-3">
@@ -176,7 +176,7 @@ include "../navbar.php";
         </div>
         <p class="text-justify p-3">
             O tanto a marca como a logotipo, e elementos visuais diversos devem ser aplicados sempre com o uso da paleta
-            estabelecida neste manual. Os tons de azul e roxo empregô, foram pensados para serem cores que transmitam
+            estabelecida neste manual. Os tons de azul e roxo Empregô, foram pensados para serem cores que transmitam
             confiança e modernidade.
         </p>
     </div>
@@ -191,7 +191,7 @@ include "../navbar.php";
         </div>
         <div class="col-6 text-center">
             <img class="w-50" src="./img/spb.png">
-            <p class="f-text-80">Icone em tons de preto e branco</p>
+            <p class="f-text-80">Ícone em tons de preto e branco</p>
         </div>
 
         <p class="text-justify p-3">
@@ -221,7 +221,7 @@ include "../navbar.php";
         </div>
         <div class="col-12 text-center">
             <img class="w-50" src="./img/tm.png">
-            <p class="f-text-80">Logo e icone em seus tamanhos mínimos</p>
+            <p class="f-text-80">Logo e ícone em seus tamanhos mínimos</p>
         </div>
 
         <p class="text-justify p-3">
@@ -291,7 +291,7 @@ include "../navbar.php";
                 </a>
             </div>
             <div class="col-6 text-left">
-                Icone<br>
+            Ícone<br>
                 <a href="./files/iconai.ai" download>
                     Arquivo Illustrator
                 </a><br>
@@ -318,7 +318,7 @@ include "../navbar.php";
                 </a>
             </div>
             <div class="col-6 text-left">
-                Icone<br>
+            Ícone<br>
                 <a href="./files/iconaipb.ai" download>
                     Arquivo Illustrator
                 </a><br>

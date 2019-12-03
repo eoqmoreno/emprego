@@ -12,7 +12,7 @@ while ($result = $row->fetch_assoc()) {
     <div class="row mt-5 mb-5 m-0">
         <h1 class="col-sm-1" aria-hidden=""></h1>
         <h1 class="f-title azulEscuro pb-4 w-100 text-center col-sm-10">Perfil do candidato</h1>
-        <div class=" col-sm-1 text-center" onclick="sairForm()">
+        <div class=" col-sm-1 text-center pointer" onclick="sairForm()">
             <h1 class="fa fa-times-circle azulEscuro" aria-hidden="true"></h1>
         </div>
 

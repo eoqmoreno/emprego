@@ -229,3 +229,7 @@ ul {
 .check {
     border-radius: 100%;
 }
+
+.pointer{
+    cursor: pointer;
+}

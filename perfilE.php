@@ -6,7 +6,7 @@ while ($result = $row->fetch_assoc()) {
     <div class="row mt-5 mb-5 m-0">
         <h1 class="col-sm-1" aria-hidden=""></h1>
         <h1 class="f-title azulClaro pb-4 w-100 text-center col-sm-10">Quer editar o perfil da empresa?</h1>
-        <div class=" col-sm-1 text-center" onclick="sairForm()">
+        <div class=" col-sm-1 text-center pointer" onclick="sairForm()">
             <h1 class="fa fa-times-circle azulClaro" aria-hidden="true"></h1>
         </div>
 

@@ -12,11 +12,10 @@ if ($tipo == "curriculo") {
     <div class="row mt-5 mb-5 m-0">
         <h1 class="col-sm-1" aria-hidden=""></h1>
         <h1 class="f-title azulClaro pb-4 w-100 text-center col-sm-10">Todas as suas vagas</h1>
-        <div class=" col-sm-1 text-center" onclick="sair()">
+        <div class=" col-sm-1 text-center pointer" onclick="sair()">
             <h1 class="fa fa-times-circle azulClaro" aria-hidden="true"></h1>
         </div>
     </div>
-    <div class="row m-0 p-0 mb-5">
 
         <?php
             $row = $conn->query("SELECT * FROM curriculo WHERE email = '" . $email . "'");
@@ -33,6 +32,7 @@ if ($tipo == "curriculo") {
                         $dias = $ar[0] . " a " . $ar[$total];
                         $caminho = "window.location.href = './perfilV.php?vaga=" . $resu['id'] . "';";
                         echo '
+                        <div class="row m-0 p-0 mb-5">
                         <div class="col-1">
                         </div>
                         <div class="col-10 bg-azulClaro rounded-pill row p-2">
@@ -42,7 +42,7 @@ if ($tipo == "curriculo") {
                         <p class="d-inline-block branco">' . $resu['turno'] . ' - ' . $dias . '</p>
                         </div>
                         <div class="col-1 my-auto">
-                        <h3 class="far fa-trash-alt branco p-0 m-0" onclick="apagarVagaC(' . $resu['id'] . ')"></h3>
+                        <h3 class="far fa-trash-alt branco p-0 m-0 pointer" onclick="apagarVagaC(' . $resu['id'] . ')"></h3>
                         </div>
                         <div class="col-1 my-auto">';
                         if($coracao){
@@ -57,12 +57,12 @@ if ($tipo == "curriculo") {
                         echo '</div>
                         </div>
                         <div class="col-1">
+                        </div>
                         </div>';
                     }
                 }
             }
             ?>
-    </div>
 
 <?php
     include './footer.php';

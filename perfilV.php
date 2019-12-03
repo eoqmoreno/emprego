@@ -16,7 +16,7 @@ if ($tipo == "empresa") {
             <div class="row mt-5 mb-5 m-0">
                 <h1 class="col-sm-1" aria-hidden=""></h1>
                 <h1 class="f-title azulClaro pb-4 w-100 text-center col-sm-10">Vamos cadastrar uma vaga!</h1>
-                <div class=" col-sm-1 text-center" onclick="sairForm()">
+                <div class=" col-sm-1 text-center pointer" onclick="sairForm()">
                     <h1 class="fa fa-times-circle azulClaro" aria-hidden="true"></h1>
                 </div>
 
@@ -232,7 +232,8 @@ if ($tipo == "empresa") {
                                     <img src="' . $resu['foto'] . '" class="rounded-circle col-1 p-0">
                                     <div class="col-8 my-auto">
                                     <h3 class="branco f-title">' . $resu['nome'] . '</h3>
-                                    <p class="d-inline-block branco">' . $resu['profissao'] . ' - ' . $resu['escolaridade'] . '</p>
+                                    <p class="d-inline-block branco p-0 m-0">Profissão: <b>' . $resu['profissao'] . '</b> | Grau de escolaridade: <b>' . $resu['escolaridade'] . '</b></p><br>
+                                    <p class="d-inline-block branco p-0 m-0">Habilidades: <b>' . $resu['habilidades'] . '</b></p>
                                     </div>
                                     <div class="col-2 my-auto text-right">
                                     <input type="button" class="btn bg-branco azulClaro" value="Detalhes" onclick="' . $caminho . '">
@@ -259,7 +260,7 @@ if ($tipo == "empresa") {
         <div class="row mt-5 mb-5 m-0">
             <h1 class="col-sm-1" aria-hidden=""></h1>
             <h1 class="f-title azulClaro pb-4 w-100 text-center col-sm-10">Vamos cadastrar uma vaga!</h1>
-            <div class=" col-sm-1 text-center" onclick="sairForm()">
+            <div class=" col-sm-1 text-center pointer" onclick="sairForm()">
                 <h1 class="fa fa-times-circle azulClaro" aria-hidden="true"></h1>
             </div>
 
