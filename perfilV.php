@@ -24,7 +24,7 @@ if ($tipo == "empresa") {
                     <form action="cadVaga.php" enctype="multipart/form-data" method="post" autocomplete="" class="">
                         <div class="text-center h-100 my-auto">
                             <?php
-                                        if ($result['foto'] == "") {
+                                        if ($result['foto'] == "./img/users/" or $result['foto'] == "") {
                                             echo '<img src="../icon/fotoE.gif" class="img-perfil" alt="" id="fotoPerfil">';
                                         } else {
                                             echo '<img src="' . $result['foto'] . '" class="img-perfil rounded-circle" alt="" id="fotoPerfil">';
@@ -296,8 +296,8 @@ if ($tipo == "empresa") {
                     <label for="" class="azulClaro text">Turno:*</label>
                     <select name="turno" class="form-control azulClaro b-azulClaro" required>
                         <option value=''>Selecionar</option>
-                        <option value=''>Matutino</option>
-                        <option value=''>Noturno</option>
+                        <option value='Matutino'>Matutino</option>
+                        <option value='Noturno'>Noturno</option>
                     </select>
                 </div>
 

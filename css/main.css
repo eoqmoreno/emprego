@@ -129,7 +129,7 @@
 /*Carousel*/
 
 .img-carousel {
-    max-height: 400px;
+    max-height: 200px;
     overflow: hidden;
 }
 
@@ -230,6 +230,6 @@ ul {
     border-radius: 100%;
 }
 
-.pointer{
+.pointer {
     cursor: pointer;
 }

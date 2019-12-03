@@ -14,7 +14,7 @@ while ($result = $row->fetch_assoc()) {
             <form action="cadEmpresa.php" enctype="multipart/form-data" method="post" autocomplete="" class="">
                 <div class="text-center">
                     <?php
-                        if ($result['foto'] == "") {
+                        if ($result['foto'] == "" or $result['foto'] == "./img/users/") {
                             echo '<img src="../icon/fotoE.gif" class="img-perfil" alt="" id="fotoPerfil">';
                         } else {
                             echo '<img src="' . $result['foto'] . '" class="img-perfil rounded-circle" alt="" id="fotoPerfil">';

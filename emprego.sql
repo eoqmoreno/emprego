@@ -59,16 +59,15 @@ CREATE TABLE `categorias` (
 -- Extraindo dados da tabela `categorias`
 --
 
-INSERT INTO `categorias` (`id`, `nome`, `quantidade`) VALUES
-(1, 'Designer', 10),
-(2, 'Vendedora', 5),
-(3, 'Mecânico', 10),
-(4, 'Analista de sistemas', 10),
-(5, 'Fisioterapeuta', 5),
-(6, 'Engenheiro de software', 5),
-(7, 'Estatístico', 5),
-(8, 'Maestro', 5),
-(9, 'Cozinheira', 5);
+INSERT INTO `categorias` (`nome`, `quantidade`) VALUES
+('Designer', 0),
+('Vendedora', 0),
+('Mecânico', 0),
+('Analista de sistemas', 0),
+('Fisioterapeuta', 0),
+('Engenheiro de software', 0),
+('Estatístico', 0),
+('Cozinheira', 0);
 
 -- --------------------------------------------------------
 

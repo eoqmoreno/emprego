@@ -95,8 +95,8 @@ while ($result = $row->fetch_assoc()) {
             </div>
 
             <div class="form-group">
-                <label for="" class="azulEscuro text">Habilidades:</label>
-                <textarea name="habilidades" class="form-control bg-branco azulEscuro b-azulEscuro" cols="30" rows="3" placeholder="Ex: Habilidade 1; Habilidade 2"><?php echo $result['habilidades']; ?></textarea>
+                <label for="" class="azulEscuro text">Habilidades:*</label>
+                <textarea name="habilidades" class="form-control bg-branco azulEscuro b-azulEscuro" cols="30" rows="3" placeholder="Ex: Habilidade 1; Habilidade 2" required><?php echo $result['habilidades']; ?></textarea>
             </div>
 
             <div class="text-right">

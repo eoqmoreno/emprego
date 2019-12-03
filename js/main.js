@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
     $('.carousel').carousel('pause');
 
     $('.data').mask('11/11/1111');
@@ -9,12 +9,12 @@ $(document).ready(function () {
     $('.cpf').mask('000.000.000-00', { reverse: true });
     $('.dinheiro').mask('000.000,00', { reverse: true });
     $(".cnpj").mask("99.999.999/9999-99");
-    $('#fotoPerfil').on('click', function () {
+    $('#fotoPerfil').on('click', function() {
         $('#fotoInput').click();
     });
 });
 
-function apagarVaga(id){
+function apagarVaga(id) {
     Swal.fire({
         title: 'Corfime aqui',
         text: 'Você realmente quer apagar essa vaga?',
@@ -25,12 +25,12 @@ function apagarVaga(id){
         confirmButtonText: 'Sim'
     }).then((result) => {
         if (result.value) {
-            location.replace('./apagarV.php?id='+id);
+            location.replace('./apagarV.php?id=' + id);
         }
     })
 }
 
-function apagarVagaC(id){
+function apagarVagaC(id) {
     Swal.fire({
         title: 'Corfime aqui',
         text: 'Você realmente quer apagar essa vaga?',
@@ -41,12 +41,12 @@ function apagarVagaC(id){
         confirmButtonText: 'Sim'
     }).then((result) => {
         if (result.value) {
-            location.replace('./apagarVC.php?id='+id);
+            location.replace('./apagarVC.php?id=' + id);
         }
     })
 }
 
-function coracao(id){
+function coracao(id) {
     Swal.fire({
         title: 'Corfime aqui',
         text: 'Você realmente quer dá um coração nesse candidato?',
@@ -57,13 +57,13 @@ function coracao(id){
         confirmButtonText: 'Sim'
     }).then((result) => {
         if (result.value) {
-            location.replace('./coracao.php?id='+id);
+            location.replace('./coracao.php?id=' + id);
         }
     })
 }
 
 
-function sairForm(){
+function sairForm() {
     Swal.fire({
         title: 'Corfime aqui',
         text: 'Você realmente quer sair sem terminar?',
@@ -79,6 +79,22 @@ function sairForm(){
     })
 }
 
-function sair(){
-            location.replace('./');
+function sair() {
+    location.replace('./');
+}
+
+function exit() {
+    Swal.fire({
+        title: 'Corfime aqui',
+        text: 'Você realmente quer sair do sistema?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Sim'
+    }).then((result) => {
+        if (result.value) {
+            location.replace('./sair.php');
+        }
+    })
 }
