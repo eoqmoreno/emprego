@@ -7,6 +7,7 @@ $pesquisa = ($_GET['pesquisa']);
 
 $row = $conn->query("SELECT * FROM vagas WHERE categoria = '$pesquisa'");
 
+if($row){
 
 ?>
 
@@ -17,7 +18,6 @@ $row = $conn->query("SELECT * FROM vagas WHERE categoria = '$pesquisa'");
         <h1 class="fa fa-times-circle roxo" aria-hidden="true"></h1>
     </div>
     <?php
-    if ($row) {
         while ($result = $row->fetch_assoc()) {
             $r = $conn->query("SELECT * FROM empresa WHERE id = '" . $result['criador'] . "'");
             $local = "";
@@ -49,10 +49,8 @@ $row = $conn->query("SELECT * FROM vagas WHERE categoria = '$pesquisa'");
                     </a>
                     </div>';
         };
-    } else {
-        echo '<h3 class="f-title roxo pb-4 w-100 text-center col-sm-10">Ainda não há vagas nessa cetegoria</h3>';
     }
-    ?>
+?>
 </div>
 </div>
 <?php
