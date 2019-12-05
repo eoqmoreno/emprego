@@ -40,9 +40,6 @@ CREATE TABLE `cadastro` (
 -- Extraindo dados da tabela `cadastro`
 --
 
-INSERT INTO `cadastro` (`id`, `idc`, `idv`, `objetivo`, `coracao`) VALUES
-(4, 36, 19, 'Ganhar dinheiro', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -95,10 +92,6 @@ CREATE TABLE `curriculo` (
 -- Extraindo dados da tabela `curriculo`
 --
 
-INSERT INTO `curriculo` (`id`, `nome`, `email`, `telefone`, `dataDeNascimento`, `escolaridade`, `profissao`, `experiencia`, `curso`, `habilidades`, `senha`, `foto`) VALUES
-(36, 'George Moreno de Oliveira', 'gmodeveloper@gmail.com', '(88) 8 8888-8888', '2000-08-25', 'Ensino superior incompleto', 'Designer', '', '', 'criativo', 'oia', './img/users/designer.png'),
-(37, 'Maria Helena', 'helena@gmail.com', '(88) 9 8888-8888', '1998-04-10', 'Ensino médio completo', 'Cabeleireira', '', '', 'experiente', 'oia', './img/users/helena.png');
-
 -- --------------------------------------------------------
 
 --
@@ -124,11 +117,6 @@ CREATE TABLE `empresa` (
 -- Extraindo dados da tabela `empresa`
 --
 
-INSERT INTO `empresa` (`id`, `nome`, `email`, `area`, `telefone`, `senha`, `endereco`, `cnpj`, `sobreE`, `sobreS`, `sobreF`, `foto`) VALUES
-(18, 'Desenvolve', 'desenvolve@gmail.com', 'Soluções tecnológicas', '(88) 8 8888-8888', 'oia', 'Rua N, Nº: 250', '88.888.888/8888-88', '', '', '', './img/users/'),
-(19, 'LoCar', 'locar@gmail.com', 'Aluguel de Carros', '(88) 8 8888-8888', 'oia', 'Rua X, Nº: 50', '88.888.888/8888-88', '', '', '', './img/users/'),
-(20, 'LaBella', 'labella@gmail.com', 'Salão de Beleza', '(88) 9 8888-8888', 'oia', 'Rua Oscar Barbosa, Nº: 500', '88.888.888/8888-88', '', '', '', './img/users/labella.jpg');
-
 -- --------------------------------------------------------
 
 --
@@ -149,14 +137,6 @@ CREATE TABLE `vagas` (
 --
 -- Extraindo dados da tabela `vagas`
 --
-
-INSERT INTO `vagas` (`id`, `categoria`, `turno`, `foto`, `dias`, `habilidades`, `salario`, `criador`) VALUES
-(18, 'Analista de sistemas', 'Matutino', './img/users/analista.png', 'Segunda,Terça,Quarta,Quinta', 'ágil, rápido, equipe', '1.000,00', 18),
-(19, 'Designer', 'Matutino', './img/users/designer.png', 'Segunda,Terça,Quarta,Quinta,Sexta,Sabado', 'criativo', '2.000,00', 18),
-(20, 'Engenheiro de software', 'Noturno', './img/users/es.png', 'Segunda,Terça,Quarta', 'rápido, seguro', '1.500,00', 18),
-(21, 'Mecânico', 'Matutino', './img/users/mecanico.png', 'Segunda,Terça,Quarta,Quinta,Sexta', 'cuidadoso, ágil', '975,00', 19),
-(22, 'Vendedor', 'Matutino', './img/users/vendedor.png', 'Segunda,Terça,Quinta,Sexta', 'comunicativo', '1.500,00', 19),
-(23, 'Cabeleireira', 'Matutino', './img/users/cabeleleira.png', 'Quinta,Sexta,Sabado', 'experiente', '500,00', 20);
 
 --
 -- Índices para tabelas despejadas
